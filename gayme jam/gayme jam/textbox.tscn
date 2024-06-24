@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsagodqh2kinp"]
+
+[ext_resource type="Texture2D" uid="uid://b1osrdo2fh6d3" path="res://assets/box.png" id="1_d0yr5"]
+[ext_resource type="FontFile" uid="uid://cb0spw22vtii6" path="res://assets/PublicPixel.ttf" id="2_kk27m"]
+
+[node name="textbox" type="MarginContainer"]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+texture_filter = 1
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 10.0
+offset_bottom = 16.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_d0yr5")
+region_rect = Rect2(0, 0, 30, 30)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_kk27m")
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

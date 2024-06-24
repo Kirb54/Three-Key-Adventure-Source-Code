@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6eefmqoswrek"]
+
+[ext_resource type="Texture2D" uid="uid://gmqrh0sxt8j0" path="res://assets/borderwhite.png" id="1_ben2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iox1d"]
+size = Vector2(40, 14)
+
+[node name="whiteborder" type="StaticBody2D"]
+z_index = -4
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ben2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_iox1d")

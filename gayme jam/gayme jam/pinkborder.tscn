@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://db66xeeh6xo8n"]
+
+[ext_resource type="Texture2D" uid="uid://dliq66mxfvx3j" path="res://assets/borderpink.png" id="1_wx3xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5qj1"]
+size = Vector2(40, 14)
+
+[node name="pinkborder" type="StaticBody2D"]
+z_index = -4
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wx3xh")
+
+[node name="Borderpink" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("1_wx3xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_c5qj1")

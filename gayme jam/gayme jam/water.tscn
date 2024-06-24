@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdwfxo2qpkxnd"]
+
+[ext_resource type="Shader" path="res://water.gdshader" id="1_52siy"]
+[ext_resource type="Texture2D" uid="uid://c73bfgnx0trof" path="res://assets/layers/wawa.png" id="1_a7ta7"]
+[ext_resource type="Script" path="res://water.gd" id="1_bh5ki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gunc8"]
+shader = ExtResource("1_52siy")
+shader_parameter/tile_factor = 10.0
+shader_parameter/aspect_ratio = 0.5
+shader_parameter/time_factor = Vector2(2, 3)
+shader_parameter/offset_factor = Vector2(5, 2)
+shader_parameter/amplitude = Vector2(0.05, 0.05)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dwr1"]
+size = Vector2(40, 40)
+
+[node name="water" type="Area2D"]
+z_index = -3
+script = ExtResource("1_bh5ki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gunc8")
+texture = ExtResource("1_a7ta7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2dwr1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

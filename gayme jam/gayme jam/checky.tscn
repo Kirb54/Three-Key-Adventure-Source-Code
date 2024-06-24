@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdp4rgp4q4fyh"]
+
+[ext_resource type="Script" path="res://checky.gd" id="1_gni1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2byp"]
+
+[node name="checky" type="Area2D"]
+script = ExtResource("1_gni1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t2byp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0vn3hkrtfo6u"]
+
+[ext_resource type="Texture2D" uid="uid://dd4tdxvijodvn" path="res://assets/borderblue.png" id="1_0scfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyh1d"]
+size = Vector2(120, 14)
+
+[node name="blueborder" type="StaticBody2D"]
+z_index = -4
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 1)
+texture = ExtResource("1_0scfb")
+
+[node name="Borderblue" type="Sprite2D" parent="."]
+position = Vector2(0, -56)
+scale = Vector2(3, 1)
+texture = ExtResource("1_0scfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gyh1d")

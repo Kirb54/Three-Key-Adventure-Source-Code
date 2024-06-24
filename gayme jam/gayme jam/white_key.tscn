@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://blayny07i4ktt"]
+
+[ext_resource type="Script" path="res://white_key.gd" id="1_8m233"]
+[ext_resource type="Texture2D" uid="uid://co5c42hitxldv" path="res://assets/whitekey.png" id="2_7nup7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7glln"]
+size = Vector2(24, 34)
+
+[node name="white key" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_8m233")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7nup7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_7glln")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
